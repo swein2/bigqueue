@@ -4,7 +4,7 @@
 
     <groupId>com.leansoft</groupId>
     <artifactId>bigqueue</artifactId>
-    <version>0.7.1-SNAPSHOT</version>
+    <version>0.7.1</version>
     <packaging>jar</packaging>
 
     <name>bigqueue</name>
@@ -132,21 +132,16 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                    <encoding>UTF-8</encoding>
-                    <links>
-                        <link>http://docs.oracle.com/javase/6/docs/api/</link>
-                    </links>
-                </configuration>
+                <version>2.9</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
-                        <phase>verify</phase>
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                        <configuration>
+                            <additionalparam>-Xdoclint:none</additionalparam>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
