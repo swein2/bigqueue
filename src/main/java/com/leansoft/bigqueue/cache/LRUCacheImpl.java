@@ -1,21 +1,17 @@
 package com.leansoft.bigqueue.cache;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.Closeable;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-
-import org.apache.log4j.Logger;
 
 /**
  * Simple and thread-safe LRU cache implementation, 
@@ -30,9 +26,9 @@ import org.apache.log4j.Logger;
  * @param <V> value
  */
 public class LRUCacheImpl<K, V extends Closeable> implements ILRUCache<K, V> {
-	
-	private final static Logger logger = Logger.getLogger(LRUCacheImpl.class);
-	
+
+	private final static Logger logger = LoggerFactory.getLogger(LRUCacheImpl.class);
+
 	public static final long DEFAULT_TTL = 10 * 1000; // milliseconds
 	
 	private final Map<K, V> map;
