@@ -4,7 +4,7 @@
 
     <groupId>com.leansoft</groupId>
     <artifactId>bigqueue</artifactId>
-    <version>0.7.1</version>
+    <version>0.7.1-slf4j</version>
     <packaging>jar</packaging>
 
     <name>bigqueue</name>
